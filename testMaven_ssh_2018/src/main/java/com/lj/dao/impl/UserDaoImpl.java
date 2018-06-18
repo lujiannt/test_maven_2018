@@ -15,6 +15,7 @@ public class UserDaoImpl extends HibernateDaoSupport implements UserDao{
 
 	@Override
 	public User selectUserById(int id) {
+		//这里的session不是hibernate原生的，而是经过包装过的
 		Session session = getHibernateTemplate().getSessionFactory().getCurrentSession();
 		Query query = session.createQuery("from User where id = :id");
 		query.setParameter("id", id);
