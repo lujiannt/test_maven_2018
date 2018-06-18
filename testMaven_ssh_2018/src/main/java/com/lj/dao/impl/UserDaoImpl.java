@@ -20,7 +20,6 @@ public class UserDaoImpl extends HibernateDaoSupport implements UserDao{
 		Query query = session.createQuery("from User where id = :id");
 		query.setParameter("id", id);
 		List<User> users = (List<User>) query.list();
-		
 		//List<User> users = (List<User>) getHibernateTemplate().find("from User where id = ?", id);
 		//return getHibernateTemplate().get(User.class, id);
 		return users.get(0);
