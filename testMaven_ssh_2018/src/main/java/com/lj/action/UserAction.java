@@ -1,5 +1,7 @@
 package com.lj.action;
 
+import javax.annotation.Resource;
+
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.lj.model.User;
@@ -20,10 +22,6 @@ public class UserAction extends ActionSupport{
 		user = userService.findUserById(1);
 		System.out.println(user.toString());
 		return SUCCESS;
-	}
-
-	public void setUserService(UserService userService) {
-		this.userService = userService;
 	}
 
 	public User getUser() {
